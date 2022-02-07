@@ -93,7 +93,13 @@ router.post("/", (req, res) => {
 // update product
 router.put("/:id", (req, res) => {
   // update product data
-  Product.update(req.body, {
+  Product.update(
+    {
+      product_name: req.body.product_name,
+      price: req.body.price,
+      
+    },
+    {
       where: {
       id: req.params.id,
     },

@@ -93,12 +93,14 @@ router.post("/", (req, res) => {
 // update product
 router.put("/:id", (req, res) => {
   // update product data
-  Product.update(req.body, {
-      where: {
+  Product.update(
+    {
+      category_name: req.body.category_name,
+    },
+    where: {
       id: req.params.id,
     },
   })
-  
     .then((product) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });

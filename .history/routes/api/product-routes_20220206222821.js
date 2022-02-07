@@ -93,12 +93,27 @@ router.post("/", (req, res) => {
 // update product
 router.put("/:id", (req, res) => {
   // update product data
-  Product.update(req.body, {
+  Product.update(
+    {
+      product_name: req.body.product_name,
+    },
+    {
       where: {
       id: req.params.id,
     },
   })
-  
+
+  .then((dbProductData) => {
+    if (!dbProductData) {
+      res.status(404).json({ message: "No Product found with this id!" });
+      return;
+    }
+    res.json(dbProductData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
     .then((product) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });

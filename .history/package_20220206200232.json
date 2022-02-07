@@ -20,12 +20,12 @@
     "nodemon": "^2.0.3"
   },
   "dependencies": {
-    "connect-session-sequelize": "^7.1.2",
-    "dotenv": "^16.0.0",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.6.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "npm-check-updates": "^12.2.1",
-    "sequelize": "^6.15.1"
+    "sequelize": "^5.22.5"
   }
 }

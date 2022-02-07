@@ -51,10 +51,10 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // create a new tag
   if (req.session) {
-    Tag.create({
-      tag_name: req.body.tag_name
+    Category.create({
+      category_name: req.body.category_name
     })
-      .then(dbTagData => res.json(dbTagData))
+      .then(dbCategoryData => res.json(dbCategoryData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

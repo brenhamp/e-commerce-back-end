@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
+const express = require('express');
+const routes = require('./routes');
+// import sequelize connection
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+=======
 const express = require("express");
 const routes = require("./routes");
 const session = require("express-session");
@@ -17,6 +25,7 @@ const sess = {
     db: sequelize,
   }),
 };
+>>>>>>> Stashed changes
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
